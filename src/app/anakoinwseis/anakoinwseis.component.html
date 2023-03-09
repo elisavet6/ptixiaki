@@ -1,0 +1,37 @@
+<div class="mat-elevation-z1">
+  <table [dataSource]="anakoinwseis" mat-table matSort>
+
+    <ng-container matColumnDef="to_mathima">
+      <th *matHeaderCellDef mat-header-cell style="font-weight: bold"> Μάθημα</th>
+      <td *matCellDef="let element" mat-cell>
+        {{ element.mathima.name }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="content">
+      <th *matHeaderCellDef mat-header-cell style="font-weight: bold">Ανακοίνωση</th>
+      <td *matCellDef="let element" mat-cell>
+        {{ element.content }}
+      </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="created_by">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header style="font-weight: bold">Δημιουργός</th>
+      <td *matCellDef="let element" mat-cell>
+        {{ element.user.fullName }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="creation_timestamp">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header style="font-weight: bold">Ημερομηνία Δημιουργίας</th>
+      <td *matCellDef="let element" mat-cell>
+        {{ element.creation_timestamp | date: 'dd/MM/yyyy HH:mm:ss'}}
+      </td>
+    </ng-container>
+
+
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr> //metavlhth pou periexei poies metavlhtes tha fainontai sto xrhsth pou mporei na tis epeksergastei
+    <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+  </table>
+</div>

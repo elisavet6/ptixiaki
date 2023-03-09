@@ -1,0 +1,49 @@
+<div class="mathimataMou">
+
+<div >
+  <mat-card-header style="margin: 20px">
+    <mat-card-title style="font-weight: bold; margin: 10px; ">ΤΑ ΜΑΘΗΜΑΤΑ ΜΟΥ- ΑΝΑΚΟΙΝΩΣΕΙΣ</mat-card-title>
+  </mat-card-header>
+
+</div>
+
+
+
+
+
+
+<mat-sidenav-container autosize="true" class="sidenav-container" style="margin-top: 80px">
+  <mat-sidenav mode="side" opened>
+
+    <mat-list>
+      <mat-list-item >
+        <div class="padding-left-1">
+          <button (click)="select('all')" mat-raised-button color="primary">Προβολή όλων των ανακοινώσεων</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item *ngFor="let mathima of enrolledmathimata">
+        <div class="padding-left-1">
+
+            {{ mathima.name }} ({{ mathima.examino }}ο Εξάμηνο, {{ mathima.video_sum }} βίντεο)
+
+          <button (click)="goToMathima(mathima)" mat-button>
+            <mat-icon>input</mat-icon>
+          </button>
+
+
+
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content >
+    <div class="padding-1">
+      <ng-template #placeholder></ng-template>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+</div>
+

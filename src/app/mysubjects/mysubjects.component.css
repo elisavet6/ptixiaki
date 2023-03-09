@@ -1,0 +1,19 @@
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+.sidenav-container {
+  background-color: white;
+  position: absolute;
+  top: 64px;
+  bottom: 64px;
+  left: 0;
+  right: 0;
+  box-shadow: 1px 1px 6px gray;
+}
+h4{
+  font-weight: bold;
+  text-align: left;
+  margin-top: 10px;
+}
+.mathimataMou{
+  background-color: white;
+}
+

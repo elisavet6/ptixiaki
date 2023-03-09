@@ -1,0 +1,33 @@
+<div class="nav">
+  <div class="dipae">
+    <img src="../../assets/ihu_white.png" width="35%" height="35%">
+  </div >
+  <ul class="menuItems">
+    <li>
+    <a *ngIf="isSecretary" [routerLink]="['/account']" data-item='account' class="account">Χρήστες</a>
+  </li>
+    <li>
+      <a [routerLink]="['/videostreaming']"  data-item='home' class="home">Αρχική</a>
+    </li>
+    <li>
+      <a [routerLink]="['/mysubjects']" data-item='mathimataMou' class="mathimataMou">Τα Μαθήματά μου</a>
+    </li>
+    <li>
+      <a  [routerLink]="['/allsubjects']" data-item='olaTaMathimata' class="olaTaMathimata">Όλα τα Μαθήματα</a>
+    </li>
+    <li>
+      <a [routerLink]="['/myprofile']" data-item='myProfile' class="myProfile">Το προφίλ μου</a>
+    </li>
+
+    <li>
+      <a (click)="logout()" data-item='logout' class="logout">Αποσύνδεση</a>
+    </li>
+  </ul>
+  <!--Media Menu-->
+  <div class="lines">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+  </div>
+

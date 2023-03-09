@@ -1,0 +1,54 @@
+<div class="subject">
+  <mat-card>
+
+    <mat-card-header>
+      <mat-card-title>Δημιουργία νέου Μαθήματος</mat-card-title>
+    </mat-card-header>
+<mat-card class="search-box">
+      <mat-dialog-actions align="center">
+        <div style="width: 100%; text-align:center;">
+          <mat-form-field matInput>
+
+            <input [(ngModel)]="mathima_name" matInput  id="name" name="name" placeholder="Subject Name" required
+                   type="text">
+          </mat-form-field>
+        </div>
+
+
+        <div style="width: 100%; text-align:center;">
+          <mat-form-field>
+            <mat-select [(ngModel)]="mathima_examino" id="examino" name="examino" placeholder="Εξάμηνο" required>
+
+              <mat-option value="1">1</mat-option>
+              <mat-option value="2">2</mat-option>
+              <mat-option value="3">3</mat-option>
+              <mat-option value="4">4</mat-option>
+              <mat-option value="5">5</mat-option>
+              <mat-option value="6">6</mat-option>
+              <mat-option value="7">7</mat-option>
+              <mat-option value="8">8</mat-option>
+              <mat-option value="9">9</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div style="width: 100%; text-align:center;">
+          <mat-form-field>
+            <mat-select [(ngModel)]="mathima_upoxrewtiko" id="upoxrewtiko" name="upoxrewtiko" required>
+              <mat-option value="Υποχρεωτικό">Υποχρεωτικό</mat-option>
+              <mat-option value="Επιλογής">Επιλογής</mat-option>
+
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div style="width: 100%; text-align:center;">
+          <button (click)="create()" [disabled]="this.mathima_name === '' || this.mathima_name === undefined || this.mathima_url === '' || this.mathima_examino === undefined
+      ||this.mathima_upoxrewtiko === '' || this.mathima_upoxrewtiko === undefined" color="primary" mat-raised-button
+                  style="margin-left: 20px;">
+            Upload
+          </button>
+        </div>
+
+      </mat-dialog-actions>
+</mat-card>
+  </mat-card>
+</div>
