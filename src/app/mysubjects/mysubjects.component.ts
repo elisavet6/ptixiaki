@@ -131,10 +131,14 @@ createanakoinwsh(){
 
  videosum(mathima: Mathima): number {
     let sum = 0;
-    for (const video of mathima.videos) {
+    if (mathima.videos){
+      for (const video of mathima.videos) {
         sum += 1;
 
+      }
+      return sum;
     }
+
    return sum;
   }
 

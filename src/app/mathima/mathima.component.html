@@ -45,7 +45,7 @@
         <ng-container matColumnDef="delete" >
           <th *matHeaderCellDef mat-header-cell >Διαγραφή Ανακοίνωσης</th>
           <td *matCellDef="let element" mat-cell>
-            <button  style="color: #cc2828" (click)="deleteAnakoinwsi(element)" mat-button>
+            <button *ngIf="isTeacher && isEnrolled" style="color: #cc2828" (click)="deleteAnakoinwsi(element)" mat-button>
               <mat-icon>delete</mat-icon>
             </button>
           </td>
@@ -172,11 +172,11 @@
       </mat-grid-tile>
     </mat-grid-list>
   </mat-card-content>
-<!--  <mat-paginator  [length]="length"-->
-<!--                  [pageSize]="pageSize"-->
-<!--                  [pageSizeOptions]="pageSizeOptions">-->
-<!--    &lt;!&ndash;                                  (page)="OnPageChange($event)">&ndash;&gt;-->
-<!--  </mat-paginator>-->
+  <mat-paginator  [length]="length"
+                  [pageSize]="pageSize"
+                  [pageSizeOptions]="pageSizeOptions">
+                  (page)="OnPageChange($event)">
+  </mat-paginator>
 </mat-card>
 
 

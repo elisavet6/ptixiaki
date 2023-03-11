@@ -10,7 +10,7 @@
       <a [routerLink]="['/videostreaming']"  data-item='home' class="home">Αρχική</a>
     </li>
     <li>
-      <a [routerLink]="['/mysubjects']" data-item='mathimataMou' class="mathimataMou">Τα Μαθήματά μου</a>
+      <a *ngIf="!isSecretary" [routerLink]="['/mysubjects']" data-item='mathimataMou' class="mathimataMou">Τα Μαθήματά μου</a>
     </li>
     <li>
       <a  [routerLink]="['/allsubjects']" data-item='olaTaMathimata' class="olaTaMathimata">Όλα τα Μαθήματα</a>

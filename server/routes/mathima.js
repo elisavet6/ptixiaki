@@ -15,7 +15,7 @@ router.post('/getall', async function (req, res, next) {
     con.query(
       sql, [],
       function (err, result) {
-        if (result.length === 0) {
+        if (err) {
           res.send({status: 0, data: err});
         } else {
           res.send({status: 1, data: result}); //stelnoume pisw ta anavathmismena stoixeia
@@ -33,7 +33,7 @@ router.post('/getmathimabyid', async function (req, res, next) {
     con.query(
       sql, [id], //stis aggiles mpainei auto pou thelo
       function (err, result) {
-        if (result.length === 0) {
+        if (err) {
           res.send({status: 0, data: err});
         } else {
           res.send({status: 1, data: result}); //stelnoume pisw ta anavathmismena stoixeia

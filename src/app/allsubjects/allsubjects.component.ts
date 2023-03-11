@@ -288,7 +288,7 @@ export class AllsubjectsComponent implements OnInit {
   }
  createSub(){
    const dialogRef = this.dialog.open(CreatesubjectComponent,{
-     height: '600px',
+     height: '550px',
      width: '400px',
      data: {user_id: this.user_id}
    });

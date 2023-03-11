@@ -148,9 +148,10 @@ export class MathimaComponent implements OnInit{
 
             if (this.user_id === aVideo.created_by) {
               aVideo.isAllowed = true;
-
+              this.displayedColumns= ['content', 'created_by','creation_timestamp','delete'];
             } else {
               aVideo.isAllowed = false;
+              this.displayedColumns= ['content', 'created_by','creation_timestamp'];
             }
 
           }
@@ -187,6 +188,7 @@ export class MathimaComponent implements OnInit{
 
 
     if (this.user.role === 'teacher') {
+
       this.isTeacher = true;
     } else {
       this.isTeacher = false;
@@ -265,11 +267,10 @@ export class MathimaComponent implements OnInit{
 
               if (this.tempanak.length === 0){
                 this.emtyAnakoinoseisList = true;
+              } else{
+                this.emtyAnakoinoseisList = false;
               }
 
-              // this.anakoinwseis = new MatTableDataSource<Anakoinwsh>(res.data);
-              // this.sort.sort({id:'creation_timestamp', start:'desc',disableClear: false});
-              // this.anakoinwseis.sort=this.sort;
             } else {
               console.log('Something went wrong with getall');
             }

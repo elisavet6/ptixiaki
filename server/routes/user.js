@@ -18,7 +18,7 @@ router.post('/login', async function (req, res, next) {
     con.query(
       sql, [username, hashed_password],
       function (err, result) {
-        if (result.length === 0) {
+        if (err) {
           res.send({status: 0, data: err});
         } else {
           let token = jwt.sign({data: result}, 'secret')
@@ -39,7 +39,7 @@ router.post('/update', async function (req, res, next) {
     con.query(
       sql, [fullName, hashed_password, username],
       function (err, result, fields) {
-        if (result.length === 0) {
+        if (err) {
           res.send({status: 0, data: err});
         } else {
           res.send({status: 1, data: [req.body]}); //stelnoume pisw ta anavathmismena stoixeia
@@ -56,7 +56,7 @@ router.post('/getall', async function (req, res, next) {
     con.query(
       sql, [],
       function (err, result) {
-        if (result.length === 0) {
+        if (err) {
           res.send({status: 0, data: err});
         } else {
           res.send({status: 1, data: result}); //stelnoume pisw ta anavathmismena stoixeia
@@ -94,7 +94,7 @@ router.post('/create', async function (req, res, next) {
     con.query(
       sql, [id,username,hashed_password,fullName,role],
       function (err, result) {
-        if (result.length === 0) {
+        if (err) {
           res.send({status: 0, data: err});
         } else {
           res.send({status: 1, data: result}); //stelnoume pisw ta anavathmismena stoixeia
@@ -112,7 +112,7 @@ router.post('/getstudents', async function (req, res, next) {
     con.query(
       sql, [role],
       function (err, result) {
-        if (result.length === 0) {
+        if (err) {
           res.send({status: 0, data: err});
         } else {
           res.send({status: 1, data: result}); //stelnoume pisw ta anavathmismena stoixeia
@@ -130,7 +130,7 @@ router.post('/getteachers', async function (req, res, next) {
     con.query(
       sql, [role],
       function (err, result) {
-        if (result.length === 0) {
+        if (err) {
           res.send({status: 0, data: err});
         } else {
           res.send({status: 1, data: result}); //stelnoume pisw ta anavathmismena stoixeia
@@ -148,7 +148,7 @@ router.post('/getsecretary', async function (req, res, next) {
     con.query(
       sql, [role],
       function (err, result) {
-        if (result.length === 0) {
+        if (err) {
           res.send({status: 0, data: err});
         } else {
           res.send({status: 1, data: result}); //stelnoume pisw ta anavathmismena stoixeia

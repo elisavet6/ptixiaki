@@ -1,12 +1,12 @@
 <div class="subject">
-  <mat-card>
+
 
     <mat-card-header>
       <mat-card-title>Δημιουργία νέου Μαθήματος</mat-card-title>
     </mat-card-header>
-<mat-card class="search-box">
+
       <mat-dialog-actions align="center">
-        <div style="width: 100%; text-align:center;">
+        <div style="width: 100%; text-align:center; margin: 20px;">
           <mat-form-field matInput>
 
             <input [(ngModel)]="mathima_name" matInput  id="name" name="name" placeholder="Subject Name" required
@@ -16,7 +16,7 @@
 
 
         <div style="width: 100%; text-align:center;">
-          <mat-form-field>
+          <mat-form-field style="margin: 20px">
             <mat-select [(ngModel)]="mathima_examino" id="examino" name="examino" placeholder="Εξάμηνο" required>
 
               <mat-option value="1">1</mat-option>
@@ -32,15 +32,15 @@
           </mat-form-field>
         </div>
         <div style="width: 100%; text-align:center;">
-          <mat-form-field>
-            <mat-select [(ngModel)]="mathima_upoxrewtiko" id="upoxrewtiko" name="upoxrewtiko" required>
+          <mat-form-field style="margin: 20px">
+            <mat-select [(ngModel)]="mathima_upoxrewtiko" id="upoxrewtiko" name="upoxrewtiko" placeholder="Υποχρεωτικό/Επιλογής" required>
               <mat-option value="Υποχρεωτικό">Υποχρεωτικό</mat-option>
               <mat-option value="Επιλογής">Επιλογής</mat-option>
 
             </mat-select>
           </mat-form-field>
         </div>
-        <div style="width: 100%; text-align:center;">
+        <div style="width: 100%; text-align:center; margin: 20px;">
           <button (click)="create()" [disabled]="this.mathima_name === '' || this.mathima_name === undefined || this.mathima_url === '' || this.mathima_examino === undefined
       ||this.mathima_upoxrewtiko === '' || this.mathima_upoxrewtiko === undefined" color="primary" mat-raised-button
                   style="margin-left: 20px;">
@@ -49,6 +49,6 @@
         </div>
 
       </mat-dialog-actions>
-</mat-card>
-  </mat-card>
+
+
 </div>
